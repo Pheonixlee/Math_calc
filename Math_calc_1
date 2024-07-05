@@ -1,0 +1,26 @@
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def find_ordered_pairs():
+    count = 0
+    for p in range(0, 10000):
+        if is_prime(p):
+            for q in range(0, 10000):
+                if is_prime(q):
+                    N = p**2 + q**3
+                    temp_digit = str(N)
+                    digits = set(str(N))
+                    if len(digits) == 10 and len(temp_digit) == 10: 
+                        count += 1
+                        print(count)
+                        print(f'Number of p is {p}' + ',' + f' q is {q}')
+    return count
+
+result = find_ordered_pairs()
+print('---------------------------------------')
+print(f"Number of ordered pairs: {result}")
