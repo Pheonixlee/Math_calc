@@ -8,9 +8,9 @@ def is_prime(num):
 
 def find_ordered_pairs():
     count = 0
-    for p in range(0, 10000):
+    for p in range(0, 100001):
         if is_prime(p):
-            for q in range(0, 10000):
+            for q in range(0, 10001):
                 if is_prime(q):
                     N = p**2 + q**3
                     temp_digit = str(N)
